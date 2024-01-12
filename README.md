@@ -2,26 +2,25 @@
 
 ## 源码（src文件夹）：
 
-- index 对应 前端 源码
-- quiz0 对应 初赛报名页 源码
-- quiz2-user 对应 复赛训练器 源码
-- quiz3 对应 决赛 源码
-- huohuo 对应 后台服务 源码
-- huohuoai 对应 复赛ai训练 源码
-- huohuobot 对应 决赛无头浏览器定时服务 源码
+- `index` 对应 前端(Nuxt3,TS)
+- `quiz0` 对应 初赛报名页(HTML,TailwindCSS,JS)
+- `quiz2-user` 对应 复赛训练器(Python,Flask)
+- `quiz3` 对应 决赛(HTML,TailwindCSS,JS)
+- `huohuo` 对应 后端服务(Golang,Gin)
+- `huohuoai` 对应 复赛ai后端(Python,Flask)
+- `huohuobot` 对应 决赛后端无头浏览器定时服务(Python,Flask+Selenium)
 
-## 如何运行
-
-## 红包
-
+## 如何运行源码
 
 ## 题解：
 
 To be continued
 
-## idea：
+## 玩家题解：
 
-在idea文件夹中
+欢迎提交！
+
+## idea（在idea文件夹中）
 
 ## 致谢：
 
