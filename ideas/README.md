@@ -4,6 +4,7 @@
 - [idea的来源以及许多](./source.md)
 - [红包设置](./rb.md)
 - [背景信息](./background.md)
+- [比赛文档PDF版](./关于举办吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞的通知.pdf)
 
 ## LICENSE
 
