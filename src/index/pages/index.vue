@@ -2,14 +2,22 @@
 import { ref } from 'vue'
 const activityStatus = ref('Pending')
 const now = ref((new Date()).getTime())
+
+// production
 const start = 1707444000000
 const end = 1707530400000
-if (now > start && now < end) activityStatus.value = 'Active'
-if (now > end) activityStatus.value = 'Ended'
-// activityStatus.value = 'Active'
-setInterval(() => {
+
+if (now.value > start && now.value < end) activityStatus.value = 'Active'
+if (now.value > end) activityStatus.value = 'Ended'
+
+activityStatus.value = 'Active'
+
+let i = setInterval(() => {
 	now.value = (new Date()).getTime()
 },1000)
+onBeforeUnmount(() => clearInterval(i))
+
+const url = "https://rb.chihuo2104.dev/rb-challenge/[cyno-clientid]/quiz0-signup"
 </script>
 
 <template>
@@ -33,7 +41,14 @@ setInterval(() => {
 				</div>
 			</div>
 			<div v-else-if="activityStatus === 'Active'" class="text-xl p-2 m-2">
-				<div class="text-xl p-2 m-2">活动已经开始啦~</div>
+				<div class="text-xl p-2 m-2">
+					活动已经开始啦~<br/>
+					距离活动结束还有
+					{{Math.floor(Math.floor((end - now) / 1000) / (3600 * 24))}}天
+					{{Math.floor(Math.floor((end - now) / 1000) % (3600 * 24) / 3600)}}小时
+					{{Math.floor(Math.floor((end - now) / 1000) % 3600 / 60)}}分钟
+					{{Math.floor(Math.floor((end - now) / 1000) % 60)}}秒
+				</div>
 				<hr/>
 				<div class="text-lg p-2">
 					<b>*特别注明：此文中的一切内容为虚构，仅供剧情展开需要。其与一切实际生活中的个人、实体、组织、公司无关。</b><br/>
@@ -51,7 +66,8 @@ setInterval(() => {
 					"习近平总书记曾殷切寄语“给孩子们的梦想插上科技的翅膀，让未来祖国的科技天地群英荟萃，让未来科学的浩瀚星空群星闪耀”...经教育部批准，在窗子懒裙卒，吃网工作室，射线和吃货等单位和个人的指导下，背歪服树您播歪果鱼学校(即"我们")作为主办方，举办本次吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞...本届大赛分初赛、复赛和决赛三个赛程...为充分调动参赛积极性，我们将在各个阶段将依据比赛成绩分别被授予参赛者不同等次的电子证书和红包奖励。2月8日前，参赛者可登录官方网站在线报名。官方网站：...(需在电脑浏览器下打开)..."它如是写道。<br/>
 					你叹了一口气，打开了你那安装了创死人不偿命的ArchLinux系统和Gnome桌面环境的古早笔记本电脑。<br/>
 					在短暂的等待后，你开启了Google Chrome Dev，输入网址，填写信息，点击报名，结果...<br/>
-					你能找出报名页的端倪，成功提交你的信息吗？
+					你能找出报名页的端倪，成功提交你的信息吗？<br/>
+					<a :href="url" target="_blank" class="text-cyan-700 hover:text-cyan-200 transition">点我打开报名页</a>&nbsp;<a href="/static/关于举办吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞的通知.pdf" target="_blank" class="text-cyan-700 hover:text-cyan-200 transition">点我打开pdf文件</a>
 				</div>
 				<hr/>
 				<h2 class="font-bold text-xl p-2">小提示：</h2>
@@ -73,13 +89,17 @@ setInterval(() => {
 				3. 在领取到红包后，请不要把红包码告诉别人。如果你们是组团做题的，不要贪心多领哦~
 			</div>
 			<div class="text-xl pl-2">
-				4. 今年新增新手友好助手。第一道题目的新手提示：熟悉JavaScript基本语法，电脑端浏览器按下Ctrl+Shift+I或者是F12打开Devtool可以解决很多问题！如果不会使用建议善用搜索引擎。
+				4. 如果今年的题目解题过于困难或未达成某一题目解题成功的目标的话，会在小提示栏提示各位~敬请关注~<br/>
+				定期检查投放时间：2024.2.9 12:00 14:00 16:00 18:00 20:00 22:00 2024.2.10 6:00 8:00，上下浮动不超过5分钟，可以提前蹲点（
 			</div>
 			<div class="text-xl pl-2">
-				5. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器，不要更换自己的设备，不要把自己的做题链接发送给他人，否则会被识别为滥用而被封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
+				5. 今年新增新手友好助手。第一道题目的新手提示：熟悉JavaScript基本语法，电脑端浏览器按下Ctrl+Shift+I或者是F12打开Devtool可以解决很多问题！如果不会使用建议善用搜索引擎。
 			</div>
 			<div class="text-xl pl-2">
-				6. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过第五条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>
+				6. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器，不要更换自己的设备，不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
+			</div>
+			<div class="text-xl pl-2">
+				7. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过第五条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>
 				组织者邮箱：i@chihuo2104.dev<br/>组织者tg: @moechihuobot(如果你熟悉组织者可以直接PM)
 			</div>
 			<div class="font-bold text-xl p-2">红包设置</div>
