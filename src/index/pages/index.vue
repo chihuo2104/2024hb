@@ -17,7 +17,7 @@ let i = setInterval(() => {
 },1000)
 onBeforeUnmount(() => clearInterval(i))
 
-const url = "https://rb.chihuo2104.dev/rb-challenge/[cyno-clientid]/quiz0-signup"
+const url = "/rb-challenge/[cyno-clientid]/[cynocid]"
 </script>
 
 <template>
@@ -99,7 +99,7 @@ const url = "https://rb.chihuo2104.dev/rb-challenge/[cyno-clientid]/quiz0-signup
 				6. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器，不要更换自己的设备，不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
 			</div>
 			<div class="text-xl pl-2">
-				7. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过第五条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>
+				7. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过第6条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>
 				组织者邮箱：i@chihuo2104.dev<br/>组织者tg: @moechihuobot(如果你熟悉组织者可以直接PM)
 			</div>
 			<div class="font-bold text-xl p-2">红包设置</div>
