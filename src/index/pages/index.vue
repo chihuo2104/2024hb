@@ -10,14 +10,14 @@ const end = 1707530400000
 if (now.value > start && now.value < end) activityStatus.value = 'Active'
 if (now.value > end) activityStatus.value = 'Ended'
 
-activityStatus.value = 'Active'
+// activityStatus.value = 'Active'
 
 let i = setInterval(() => {
 	now.value = (new Date()).getTime()
 },1000)
 onBeforeUnmount(() => clearInterval(i))
 
-const url = "/rb-challenge/[cyno-clientid]/[cynocid]"
+const url = "/rb-challenge/[cyno-clientid]/quiz0-signup"
 </script>
 
 <template>
