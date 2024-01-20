@@ -1,4 +1,4 @@
-module chihuo2104.dev/huohuo
+module chihuo2104.dev/huohuorb
 
 go 1.21.5
 
