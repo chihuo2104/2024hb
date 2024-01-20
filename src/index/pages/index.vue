@@ -10,7 +10,6 @@ const end = 1707530400000
 if (now.value > start && now.value < end) activityStatus.value = 'Active'
 if (now.value > end) activityStatus.value = 'Ended'
 
-// activityStatus.value = 'Active'
 
 let i = setInterval(() => {
 	now.value = (new Date()).getTime()
@@ -73,7 +72,14 @@ const url = "/rb-challenge/[cyno-clientid]/quiz0-signup"
 				<h2 class="font-bold text-xl p-2">小提示：</h2>
 				<div class="text-lg p-2">啊哦，这里暂无小提示！</div>
 			</div>
-			<div v-else-if="activityStatus === 'Ended'" class="text-xl p-2 m-2">活动结束啦~等待明年的红包挑战吧~</div>
+			<div v-else-if="activityStatus === 'Ended'" class="text-xl p-2 m-2">
+				<div class="text-xl p-2 m-2">
+					活动结束啦~期待2026年的红包挑战吧~
+				</div>
+				<div class="text-xl p-2 m-2">
+					题解尚未发布
+				</div>
+			</div>
 			<hr/>
 			<h2 class="font-bold text-xl p-2">Q&As</h2>
 			<div class="text-xl pl-2">
@@ -83,7 +89,7 @@ const url = "/rb-challenge/[cyno-clientid]/quiz0-signup"
 				e.g. 'ENITCh5oHu0' -> sha1('ENITCh5oHu0') -> 492139fe5f9cea24114ebdf35fba54ff8921674e -> (取前8位) 492139fe -> 输入支付宝 -> 获取红包
 			</div>
 			<div class="text-xl pl-2">
-				2. 在做题过程中你可能会使用到手机无法使用的工具，使用电脑可以获得更愉快的玩耍体验。
+				2. 在做题过程中你可能会使用到手机无法使用的工具，使用电脑可以获得更愉快的玩耍体验。如果你的浏览器安装了ADBlockPlus,uBlockOrigin等广告拦截插件，请在此网站关闭它们以免误杀服务的正常上报动作。
 			</div>
 			<div class="text-xl pl-2">
 				3. 在领取到红包后，请不要把红包码告诉别人。如果你们是组团做题的，不要贪心多领哦~
@@ -96,10 +102,13 @@ const url = "/rb-challenge/[cyno-clientid]/quiz0-signup"
 				5. 今年新增新手友好助手。第一道题目的新手提示：熟悉JavaScript基本语法，电脑端浏览器按下Ctrl+Shift+I或者是F12打开Devtool可以解决很多问题！如果不会使用建议善用搜索引擎。
 			</div>
 			<div class="text-xl pl-2">
-				6. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器，不要更换自己的设备，不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
+				6. 如果你真的看到你在做的题目没有思路了 推荐阅读：https://blog.chihuo2104.dev/posts/ustc-hackergame2023-writeups
 			</div>
 			<div class="text-xl pl-2">
-				7. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过第6条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>
+				7. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器，不要更换自己的设备，不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
+			</div>
+			<div class="text-xl pl-2">
+				8. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过前一条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>
 				组织者邮箱：i@chihuo2104.dev<br/>组织者tg: @moechihuobot(如果你熟悉组织者可以直接PM)
 			</div>
 			<div class="font-bold text-xl p-2">红包设置</div>
