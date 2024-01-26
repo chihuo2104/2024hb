@@ -2,6 +2,8 @@
 
 ## Quiz0背景
 
+*此图片为AIGC内容，为配合文字理解场景使用，不代表任何主观立场。*
+
 ![](./background-picture-generated-from-DALLE.jpg)
 
 2024年2月8日，周四，距离寒假结束还有10天。
