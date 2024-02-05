@@ -18,8 +18,30 @@
                 </label>
                 <br/>
             </div>
+            <script>
+              function ysqd() {
+                location.href="https://ys.mihoyo.com/"
+              }
+              async function signup() {
+                const username = document.getElementById("username").value
+                console.log(username)
+                if (username === '') {
+                  alert('请填写用户名！')
+                } else {
+                  ysqd()
+                  return -1
+                  resp = await fetch("https://rb.chihuo2104.dev/api/huohuorb?module=challenge0-signup&token=" + {Server_Provided_Token} + "&username=" + user)
+                  if (resp.ok) {
+                    alert("恭喜你报名成功！")
+                    location.href="[Generated Next Application]/quiz0-end"
+                  } else {
+                    alert("恭喜你报名失败！")
+                  }
+                }
+              }
+            </script>
             <div class="text-center">
-                <button class="text-2xl hover:shadow-2xl shadow-md bg-cyan-200 border-r-2 p-2  transition-all m-2">立即报名</button>
+                <button class="text-2xl hover:shadow-2xl shadow-md bg-cyan-200 border-r-2 p-2  transition-all m-2" onclick="signup()">立即报名</button>
             </div>
         </div>
     </body>
