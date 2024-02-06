@@ -1,4 +1,7 @@
 <script setup>
+useHead({
+	title: 'chi的小红包冒险 v.e.r. 2024'
+})
 import { ref } from 'vue'
 const activityStatus = ref('Pending')
 const now = ref((new Date()).getTime())
