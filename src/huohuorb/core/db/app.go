@@ -12,7 +12,7 @@ type HuohuoDB struct {
 }
 
 func New(url string) HuohuoDB {
-	db, err := sql.Open("sqlite3", url)
+	db, err := sql.Open("sqlite3", url+"?cache=shared&mode=rwc")
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -3,25 +3,29 @@ package utils
 import (
 	"chihuo2104.dev/huohuorb/config"
 	"chihuo2104.dev/huohuorb/core/db"
+	"log"
 )
 
-func CheckRequirements(cid string, reqid string) bool {
+func GetTime(cid string, reqid string) int {
+	start := a{}
 	conn := db.New(config.DB)
 	// requires challenge0-in otherwise it is not authorized.
 	resp := conn.Query("SELECT * FROM `clientids` WHERE `cid`=\"" + cid + "\" AND `action`=\"" + reqid + "\"")
 	if resp.Next() {
-		conn.Close()
+		resp.Scan(&start.Cid, &start.Action, &start.Time, &start.Note, &start.Id)
 		err := resp.Close()
+		conn.Close()
 		if err != nil {
-			return false
+			log.Fatalln(err.Error())
 		}
-		return true
+		return start.Time
 	} else {
 		conn.Close()
 		err := resp.Close()
 		if err != nil {
-			return false
+			log.Fatalln(err.Error())
 		}
-		return false
+		return -1
 	}
+	return -1
 }
