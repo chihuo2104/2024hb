@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.10.4",
+    "@types/sha1": "^1.1.5",
     "nuxt": "^3.9.1",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "javascript-obfuscator": "^4.1.0",
-    "rollup-obfuscator": "^4.1.1"
+    "rollup-obfuscator": "^4.1.1",
+    "sha1": "^1.1.1"
   }
 }
