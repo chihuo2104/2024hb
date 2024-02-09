@@ -12,5 +12,6 @@ func CheckConnectionToken(time string, token string) bool {
 	h := sha1.New()
 	io.WriteString(h, str)
 	sha1_hash := h.Sum(nil)
+	//fmt.Println(str, hex.EncodeToString(sha1_hash))
 	return hex.EncodeToString(sha1_hash) == token
 }

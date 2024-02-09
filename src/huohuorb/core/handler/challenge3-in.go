@@ -7,15 +7,12 @@ import (
 	"time"
 )
 
-func Challenge2Commit(cid string, score string) bool {
+func Challenge3In(cid string) bool {
 	conn := db.New()
 	time := int(time.Now().Unix())
 	if utils.CheckRequirements(cid, "challenge2-commit") {
-		return true
-	}
-	if utils.CheckRequirements(cid, "challenge2-in") {
 		// requires challenge0-in otherwise it is not authorized.
-		conn.Exec("INSERT INTO `clientids`  VALUES (\"" + cid + "\",\"challenge1-commit\"," + strconv.Itoa(time) + ",\"" + score + "\", NULL)")
+		conn.Exec("INSERT INTO `clientids`  VALUES (\"" + cid + "\",\"challenge2-in\"," + strconv.Itoa(time) + ",\"checkin\",NULL)")
 		conn.Close()
 		return true
 	} else {

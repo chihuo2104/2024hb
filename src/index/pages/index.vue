@@ -1,8 +1,11 @@
 <script setup>
+import {generate} from "../scripts/clientid";
+
 useHead({
 	title: 'chi的小红包冒险 v.e.r. 2024'
 })
 import { ref } from 'vue'
+import {useFetch} from "#app";
 const activityStatus = ref('Pending')
 const now = ref((new Date()).getTime())
 
@@ -13,13 +16,17 @@ const end = 1707530400000
 if (now.value > start && now.value < end) activityStatus.value = 'Active'
 if (now.value > end) activityStatus.value = 'Ended'
 
+activityStatus.value = 'Active'
 
 let i = setInterval(() => {
 	now.value = (new Date()).getTime()
 },1000)
 onBeforeUnmount(() => clearInterval(i))
 
-const url = "/rb-challenge/[cyno-clientid]/quiz0-signup"
+const resp = await useFetch('/api/huohuorb?module=userinfo')
+const res = JSON.parse(resp.data.value)
+const cid = generate(res.data.ua, res.data.ip)
+const url = "/rb-challenge/" + cid + "/quiz0-signup"
 </script>
 
 <template>
@@ -108,7 +115,7 @@ const url = "/rb-challenge/[cyno-clientid]/quiz0-signup"
 				6. 如果你真的看到你在做的题目没有思路了 推荐阅读：https://blog.chihuo2104.dev/posts/ustc-hackergame2023-writeups
 			</div>
 			<div class="text-xl pl-2">
-				7. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器，不要更换自己的设备，不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
+				7. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器(包括但不限于更新浏览器，切换浏览器品牌等)，不要更换自己的设备，不要对本站开启代理服务（很容易误封），不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
 			</div>
 			<div class="text-xl pl-2">
 				8. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过前一条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>

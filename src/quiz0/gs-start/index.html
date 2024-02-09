@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>原神 - 米哈游开放世界探索游戏</title>
+    <title>原神 - 米哈游全新开放世界探索游戏</title>
     <style>
         :root{
             /*mhy*/
@@ -52,11 +52,12 @@
     </div>
     <script>
         setTimeout(() => {
-          // server actions
+          if(navigator.userAgent.includes("Game Browser")){
+            alert('恭喜你获得隐藏彩蛋小红包！')
+          }
           alert('请从原神浏览器打开访问此网页')
           return
           // if genshin server 什么什么 Game Browser
-          alert('恭喜你获得隐藏彩蛋小红包！')
         }, 10000)
     </script>
 </body>

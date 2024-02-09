@@ -3,7 +3,7 @@ import {useFetch} from "#app";
 import {generate} from "~/scripts/clientid";
 
 useHead({
-	title: '初赛反馈结果'
+	title: '复赛反馈结果'
 })
 
 const show = ref(false)
@@ -12,13 +12,13 @@ const resp = await useFetch('/api/huohuorb?module=userinfo')
 const res = JSON.parse(resp.data.value)
 const cid = generate(res.data.ua, res.data.ip)
 
-const { data } = await useFetch("/api/huohuorb?module=gettime&c=challenge1-commit&cid=" + $route.params.cynocid)
+const { data } = await useFetch("/api/huohuorb?module=gettime&c=challenge2-commit&cid=" + $route.params.cynocid)
 const d = JSON.parse(data.value)
 if (d.code === 200 &&  cid === $route.params.cynocid) {
 	show.value = true
 }
 
-const url = "/rb-challenge/" + cid + "/quiz2"
+const url = "/rb-challenge/" + cid + "/quiz3"
 
 function go () {
 	location.href = url
@@ -29,23 +29,15 @@ function go () {
 	<div class="bg-gray-200 h-screen w-screen" v-if="show">
 		<div class="container max-w-2xl p-2 mx-auto shadow-md">
 			<div class="text-3xl font-bold text-center m-2">吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞</div>
-			<div class="text-2xl font-bold text-center m-2">初赛反馈结果</div>
+			<div class="text-2xl font-bold text-center m-2">复赛反馈结果</div>
 			<div class="text-xl  text-center">
-				{username}，感谢参加吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞初赛！<br/>
+				{username}，感谢参加吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞复赛！<br/>
 				您的分数是：{score}<br/>
-				红包码为：xxxxxxxxxxx,不要告诉别人哦，共24个20.24元。<br/>
-				复赛即将开始，请做好准备！
-			</div>
-			<div class="text-xl  text-center">
-				AD:欢迎加入chigroup！<br/>
-				杜叔叔(Telegram):<br/>
-				矩阵(Matrix):<br/>
-				微信(WeChat):<br/>
-				Slack:<br/>
-				欢迎来玩！
+				红包码为：xxxxxxxxxxx,不要告诉别人哦，共12个20.24元。<br/>
+				决赛即将开始，请做好准备！
 			</div>
 			<div class="text-center">
-				<button class="text-2xl hover:shadow-2xl shadow-md bg-cyan-200 border-r-2 p-2  transition-all m-2" @click="go">点我进入复赛</button>
+				<button class="text-2xl hover:shadow-2xl shadow-md bg-cyan-200 border-r-2 p-2  transition-all m-2" @click="go">点我进入决赛</button>
 				<button class="text-2xl hover:shadow-2xl shadow-md bg-cyan-200 border-r-2 p-2  transition-all m-2" onclick="generate">点我生成证书</button>
 			</div>
 		</div>

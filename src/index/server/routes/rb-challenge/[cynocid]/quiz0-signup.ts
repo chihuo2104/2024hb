@@ -1,9 +1,26 @@
 // 静态文件 HTML 页
-import sha1 from 'sha1'
-export default defineEventHandler((event) => {
+import {generate} from "~/scripts/clientid";
+import config from "~/scripts/config";
+import {GenerateToken} from "~/scripts/token";
+
+export default defineEventHandler(async (event) => {
+    const head = getHeaders(event)
+    const ua = head['user-agent'] || ''
+    const ip = head["x-forwarded-for"] || ''
     const cynocid = getRouterParam(event, 'cynocid') || ''
-    if (cynocid == '') {
-        return `Error -1`
+
+    const  t = Math.floor(new Date().getTime() / 1000)
+    const respt = await fetch(config.huohuorb + "?module=challenge0-in&t=" + t + "&cid=" + cynocid + "&tk=" + GenerateToken(config.token, t), {method:"POST"})
+    const rest = await respt.json()
+
+    if (rest.code !== 200) {
+        setResponseHeader(event, "content-type", "text/html;charset=utf8")
+        return `<img src="https://upload-bbs.mihoyo.com/upload/2022/10/19/02711c97bc7fa445d87655db1666e851_2779652806545815616.png"/><h1>啊哦，你被大风机关盯上了！[Errno -1]</h1>您的网络环境存在风险，请稍后再试。`
+    }
+
+    if (cynocid === '' || cynocid !== generate(ua, ip)) {
+        setResponseHeader(event, "content-type", "text/html;charset=utf8")
+        return `<img src="https://upload-bbs.mihoyo.com/upload/2022/10/19/02711c97bc7fa445d87655db1666e851_2779652806545815616.png"/><h1>啊哦，你被大风机关盯上了！[Errno -1]</h1>您的网络环境存在风险，请稍后再试。`
     }
     // @ts-ignore
     const resp = `
@@ -700,7 +717,7 @@ video {
             </div>
             <script>
               function ysqd() {
-                location.href="https://ys.mihoyo.com/"
+                location.href="/rb-challenge/2fde36b132975e23125b2d6d043a7ec07caf9b7061fdcade98604f86ffad8635"
               }
               async function signup() {
                 const username = document.getElementById("username").value

@@ -26,7 +26,7 @@ def index():
     r = document.getElementById("resp")
     resp = await fetch('/test?input=' + encodeURIComponent(content))
     res = await resp.text()
-    r.innerHTML += (new Date() + '返回内容：' + res) + "<br/>"
+    r.innerHTML += (new Date() + '您的输入:' + content +  '返回内容：' + res) + "<br/>"
   }
 </script><br/>
 <button onclick="commit()">点我提交</button>
@@ -41,6 +41,7 @@ def predict():
     output = model.generate(input_ids, max_length = 1000, num_beams=1)
     output_text = tokenizer.decode(output[0], skip_special_tokens=True)
     resp = output_text[len(prompt):]
+    resp = resp.lower()
     print(resp)
     score = 0
     if resp.find("good") != -1 :
