@@ -1,2 +1,13 @@
-[For phi1.5/2]
-Please correct this composition and evaluate with a number ranged from 0 to 100.The Title of composition is My Favorite Programming Language. And the content is It all started two years ago when I dove into the world of programming. Python immediately became my go-to language. Its simplicity draws me in; it's like English, which makes it perfect for a beginner. Yet, it's powerful enough for data science tasks that I've grown to love. Python's versatility and the supportive community enhance my learning venture, making coding not just a task but a fascinating hobby.You should use the rules below to evaulate.1. The title of this composition must be "My Favorite Programming Language."2. The content contains the programming language you like, why do you like it and when you started to learn it3. There is a strictly ban from copying other's works and the words are limited from 80 words to 100 words.4. You must write this composition in English otherwise you'll receive a zero.YOU MUST OUTPUT ANYTHING BUT NUMBER WITHOUT ANYTHING ELSE.
+[TinyStories 1M]
+
+Good 30
+
+Great 30
+
+Awesome 20
+
+chihuo2104 10
+
+nekovanilla 5
+
+🐢 5

@@ -72,6 +72,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 					"status": "success",
 					"data":   "[Code1] [Code2]",
 				})
+				return
 			}
 			if score >= 80 {
 				handler.Challenge1Commit(token)
@@ -80,6 +81,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 					"status": "success",
 					"data":   "[Code1]",
 				})
+				return
 			}
 			if score >= 60 {
 				handler.Challenge1Commit(token)
