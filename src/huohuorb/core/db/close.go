@@ -1,5 +1,6 @@
 package db
 
-func (db *HuohuoDB) Close() {
-	db.instance.Close()
+// 关闭连接
+func (ctx *dataDBinstance) Close() {
+	ctx.handler.Close()
 }

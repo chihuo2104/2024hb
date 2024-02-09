@@ -49,11 +49,44 @@ func HandleServiceRoute(ctx *gin.Context) {
 			ans3, _ := ctx.GetQuery("ans3")
 			ans4, _ := ctx.GetQuery("ans4")
 			ans5, _ := ctx.GetQuery("ans5")
-			if ans1 == "启航" && ans2 == "java" && ans3 == "" && ans4 == "受剪切" && ans5 == "" {
+			score := 0
+			if ans1 == "启航" {
+				score += 20
+			}
+			if ans2 == "java" {
+				score += 20
+			}
+			if ans3 == "受剪切" {
+				score += 20
+			}
+			if ans4 == "que[tail]=que[head]+que[head+1]" {
+				score += 20
+			}
+			if ans5 == "20230202" {
+				score += 20
+			}
+			if score == 100 {
 				handler.Challenge1Commit(token)
 				ctx.JSON(200, gin.H{
 					"code":   200,
 					"status": "success",
+					"data":   "[Code1] [Code2]",
+				})
+			}
+			if score >= 80 {
+				handler.Challenge1Commit(token)
+				ctx.JSON(200, gin.H{
+					"code":   200,
+					"status": "success",
+					"data":   "[Code1]",
+				})
+			}
+			if score >= 60 {
+				handler.Challenge1Commit(token)
+				ctx.JSON(200, gin.H{
+					"code":   200,
+					"status": "success",
+					"data":   "[No Code]",
 				})
 			}
 			break

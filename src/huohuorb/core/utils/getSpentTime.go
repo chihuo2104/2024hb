@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"chihuo2104.dev/huohuorb/config"
 	"chihuo2104.dev/huohuorb/core/db"
 	"log"
 )
@@ -17,7 +16,7 @@ type a struct {
 func GetSpentTime(cid string, startreqid string, endreqid string) int {
 	start := a{}
 	end := a{}
-	conn := db.New(config.DB)
+	conn := db.New()
 	// requires challenge0-in otherwise it is not authorized.
 	resp := conn.Query("SELECT * FROM `clientids` WHERE `cid`=\"" + cid + "\" AND `action`=\"" + startreqid + "\"")
 	if resp.Next() {

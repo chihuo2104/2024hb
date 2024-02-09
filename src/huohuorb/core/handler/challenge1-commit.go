@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"chihuo2104.dev/huohuorb/config"
 	"chihuo2104.dev/huohuorb/core/db"
 	"chihuo2104.dev/huohuorb/core/utils"
 	"strconv"
@@ -9,7 +8,7 @@ import (
 )
 
 func Challenge1Commit(cid string) bool {
-	conn := db.New(config.DB)
+	conn := db.New()
 	time := int(time.Now().Unix())
 	if utils.CheckRequirements(cid, "challenge1-commit") {
 		return true

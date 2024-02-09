@@ -2,10 +2,10 @@ package db
 
 import "database/sql"
 
-func (db *HuohuoDB) Exec(sql string) sql.Result {
-	resp, err := db.instance.Exec(sql)
+func (db *dataDBinstance) Exec(sql string) sql.Result {
+	result, err := db.handler.Exec(sql)
 	if err != nil {
-		panic(err.Error())
+		panic(err)
 	}
-	return resp
+	return result
 }

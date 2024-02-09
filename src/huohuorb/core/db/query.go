@@ -1,14 +1,11 @@
 package db
 
-import (
-	"database/sql"
-	"log"
-)
+import "database/sql"
 
-func (db *HuohuoDB) Query(sql string) *sql.Rows {
-	rows, err := db.instance.Query(sql)
+func (db *dataDBinstance) Query(sql string) *sql.Rows {
+	result, err := db.handler.Query(sql)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
-	return rows
+	return result
 }
