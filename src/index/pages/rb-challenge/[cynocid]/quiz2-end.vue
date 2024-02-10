@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import {useFetch} from "#app";
 import {generate} from "~/scripts/clientid";
 
 useHead({

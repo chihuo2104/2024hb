@@ -1,5 +1,4 @@
 <script setup>
-import {useFetch} from "#app";
 import {generate} from "~/scripts/clientid";
 import config from "~/scripts/config";
 import {GenerateToken} from "~/scripts/token";

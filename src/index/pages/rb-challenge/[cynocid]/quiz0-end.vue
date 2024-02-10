@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import {generate} from "~/scripts/clientid";
-import {useFetch} from "#app";
 import config from "~/scripts/config";
 import {GenerateToken} from "~/scripts/token";
 

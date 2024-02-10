@@ -5,18 +5,17 @@ useHead({
 	title: 'chi的小红包冒险 v.e.r. 2024'
 })
 import { ref } from 'vue'
-import {useFetch} from "#app";
 const activityStatus = ref('Pending')
 const now = ref((new Date()).getTime())
 
 // production
-const start = 1707444000000
-const end = 1707530400000
+const start = 1707480000000
+const end = 1707566400000
 
 if (now.value > start && now.value < end) activityStatus.value = 'Active'
 if (now.value > end) activityStatus.value = 'Ended'
 
-activityStatus.value = 'Active'
+// activityStatus.value = 'Active'
 
 let i = setInterval(() => {
 	now.value = (new Date()).getTime()

@@ -1,5 +1,4 @@
 <script setup>
-import {useFetch} from "#app";
 import {generate} from "~/scripts/clientid";
 import config from "~/scripts/config";
 import {GenerateToken} from "~/scripts/token";
@@ -57,6 +56,7 @@ function go () {
 				“......”<br/>
 				在长达6小时的交谈中，你得知由于组委会的层层克扣，原来100万的比赛经费补助到他那边只有两千了。用这些钱请您播歪果鱼学校的学生当评委都不够，没办法，死马当作活马医，只能上个AI当评委了。<br/>
 				由于你和吃的交情过硬，他给你写了个训练程序帮助你训练自己的作文并让AI评委打分，训练后的作文交上去，肯定能过关。
+				<a href="/static/quiz2.zip">下载chi的训练程序</a>
 			</div>
 			<hr/>
 			<h1 class="font-bold text-3xl p-2">吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞复赛答题平台</h1>
