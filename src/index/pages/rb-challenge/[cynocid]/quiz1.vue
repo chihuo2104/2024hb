@@ -89,7 +89,7 @@ function go () {
 					&nbsp;&nbsp;print(que[tail], end=“”)<br/>
 					&nbsp;&nbsp;tail += 1<br/>
 					&nbsp;&nbsp;for j in range(i-2):<br/>
-					&nbsp;&nbsp;&nbsp;&nbsp;que[tail] = (你需要填入的地方)<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;(你需要填入的地方)<br/>
 					&nbsp;&nbsp;&nbsp;&nbsp;print(que[tail], end=“”)<br/>
 					&nbsp;&nbsp;&nbsp;&nbsp;tail += 1<br/>
 					&nbsp;&nbsp;&nbsp;&nbsp;head += 1<br/>

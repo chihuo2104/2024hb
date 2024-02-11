@@ -7,15 +7,15 @@ import (
 	"time"
 )
 
-func Challenge0Signup(cid string, username string) bool {
+func Challenge3Approve(cid string) bool {
 	conn := db.New()
 	time := int(time.Now().Unix())
-	if utils.CheckRequirements(cid, "challenge0-signup") {
+	if utils.CheckRequirements(cid, "challenge3-approve") {
 		return true
 	}
-	if utils.CheckRequirements(cid, "challenge0-in") {
+	if utils.CheckRequirements(cid, "challenge3-comment") {
 		// requires challenge0-in otherwise it is not authorized.
-		conn.Exec("INSERT INTO `clientids`  VALUES (\"" + cid + "\",\"challenge0-signup\"," + strconv.Itoa(time) + ",\"" + username + "\", NULL)")
+		conn.Exec("INSERT INTO `clientids`  VALUES (\"" + cid + "\",\"challenge3-approve\"," + strconv.Itoa(time) + ",\"up\", NULL)")
 		conn.Close()
 		return true
 	} else {

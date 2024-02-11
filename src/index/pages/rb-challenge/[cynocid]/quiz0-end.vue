@@ -15,6 +15,10 @@ const cid = generate(res.data.ua, res.data.ip)
 
 const { data } = await useFetch("/api/huohuorb?module=gettime&c=challenge0-signup&cid=" + $route.params.cynocid)
 const d = JSON.parse(data.value)
+
+const res2 = (await useFetch("/api/huohuorb?module=getuname&cid=" + $route.params.cynocid)).data
+const d2 = JSON.parse(res2.value)
+const username = d2.data
 if (d.code ===200 &&  cid === $route.params.cynocid) {
 	show.value = true
 }
@@ -32,8 +36,8 @@ function go () {
 			<div class="text-3xl font-bold text-center m-2">吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞</div>
 			<div class="text-2xl font-bold text-center m-2">报名成功！</div>
 			<div class="text-xl  text-center">
-				{username}，欢迎参加吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞！<br/>
-				红包码为：xxxxxxxxxxx,不要告诉别人哦，共48个20.24元。<br/>
+				{{username}}，欢迎参加吃网杯贰拾壹食姬嘤郁欣喜鸡书妲塞！<br/>
+				红包码为：ENITCB19sF2,不要告诉别人哦，共48个20.24元。<br/>
 				初赛即将开始，请做好准备！
 			</div>
 			<div class="text-center">

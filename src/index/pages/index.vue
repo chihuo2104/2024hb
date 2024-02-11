@@ -9,13 +9,11 @@ const activityStatus = ref('Pending')
 const now = ref((new Date()).getTime())
 
 // production
-const start = 1707480000000
-const end = 1707566400000
+const start = 1707566400000
+const end = 1707652800000
 
 if (now.value > start && now.value < end) activityStatus.value = 'Active'
 if (now.value > end) activityStatus.value = 'Ended'
-
-// activityStatus.value = 'Active'
 
 let i = setInterval(() => {
 	now.value = (new Date()).getTime()
@@ -26,6 +24,8 @@ const resp = await useFetch('/api/huohuorb?module=userinfo')
 const res = JSON.parse(resp.data.value)
 const cid = generate(res.data.ua, res.data.ip)
 const url = "/rb-challenge/" + cid + "/quiz0-signup"
+
+// activityStatus.value = 'Active'
 </script>
 
 <template>
@@ -33,9 +33,10 @@ const url = "/rb-challenge/" + cid + "/quiz0-signup"
 		<div id="container" class="container max-w-5xl shadow-xl m-10 p-5 backdrop-blur-lg">
 			<h1 class="font-bold text-3xl p-2">chi的小红包冒险&nbsp;<small>v.e.r. 2024</small></h1>
 			<div class="text-lg p-2">
+				非常抱歉鸽了一天终于和大家再次见面了，小冒险马上就开始啦！<br/>
 				花了挺长时间组题，这次的红包难度较去年有些许上升(最主要是区分度)，也加了主题背景以便大家更好地玩耍，在这里祝大家龙年快乐啦~<br/>
-				活动时间：2024.2.9 10:00 - 2024.2.10 10:00<br/>
-				官方题解将会在2024.2.10 14:00发布（x
+				活动时间：2024.2.10 20:00 - 2024.2.11 20:00<br/>
+				官方题解将会在2024.2.12 14:00发布（x
 			</div>
 			<hr/>
 			<div v-if="activityStatus === 'Pending'" class="text-xl p-2 m-2">
@@ -49,6 +50,9 @@ const url = "/rb-challenge/" + cid + "/quiz0-signup"
 				</div>
 			</div>
 			<div v-else-if="activityStatus === 'Active'" class="text-xl p-2 m-2">
+				<div class="text-xl p-2 m-2">
+					quiz3写完了，现在已经开启。
+				</div>
 				<div class="text-xl p-2 m-2">
 					活动已经开始啦~<br/>
 					距离活动结束还有
@@ -79,7 +83,7 @@ const url = "/rb-challenge/" + cid + "/quiz0-signup"
 				</div>
 				<hr/>
 				<h2 class="font-bold text-xl p-2">小提示：</h2>
-				<div class="text-lg p-2">啊哦，这里暂无小提示！</div>
+				<div class="text-lg p-2">2.10 22:00提示：quiz1的第一题可以去微信里面找一找</div>
 			</div>
 			<div v-else-if="activityStatus === 'Ended'" class="text-xl p-2 m-2">
 				<div class="text-xl p-2 m-2">
@@ -105,7 +109,7 @@ const url = "/rb-challenge/" + cid + "/quiz0-signup"
 			</div>
 			<div class="text-xl pl-2">
 				4. 如果今年的题目解题过于困难或未达成某一题目解题成功的目标的话，会在小提示栏提示各位~敬请关注~<br/>
-				定期检查投放时间：2024.2.9 12:00 14:00 16:00 18:00 20:00 22:00 2024.2.10 6:00 8:00，上下浮动不超过5分钟，可以提前蹲点（
+				定期检查投放时间：2024.2.10 22:00 2024.2.11 8:00 10:00 14:00 16:00 18:00，上下浮动不超过5分钟，可以提前蹲点（
 			</div>
 			<div class="text-xl pl-2">
 				5. 今年新增新手友好助手。第一道题目的新手提示：熟悉JavaScript基本语法，电脑端浏览器按下Ctrl+Shift+I或者是F12打开Devtool可以解决很多问题！如果不会使用建议善用搜索引擎。
@@ -114,7 +118,7 @@ const url = "/rb-challenge/" + cid + "/quiz0-signup"
 				6. 如果你真的看到你在做的题目没有思路了 推荐阅读：https://blog.chihuo2104.dev/posts/ustc-hackergame2023-writeups
 			</div>
 			<div class="text-xl pl-2">
-				7. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器(包括但不限于更新浏览器，切换浏览器品牌等)，不要更换自己的设备，不要对本站开启代理服务（很容易误封），不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。
+				7. 由于去年的时候有通过奇技淫巧而非正规手段获得答案的情况，本年度的问答页管理将极为严格。请各位在做题时不要切换浏览器(包括但不限于更新浏览器，切换浏览器品牌等)，不要更换自己的设备，不要对本站开启代理服务（很容易误封），不要把自己的做题链接发送给他人，否则会被识别为滥用而被临时（表现为“啊哦，你被大风机关盯上了！[Errno -1]；您的网络环境存在风险，请稍后再试。”）或永久封禁（表现为“啊哦，你被大风机关制裁了！[Errno -2]；您的网络环境存在风险，请稍后再试。”）。（出现500错误同等原因。）
 			</div>
 			<div class="text-xl pl-2">
 				8. 如果做题页面出现[Errno -1]和[Errno -2]但你并没有干过前一条提及过的情况，或者是对题目本身的bug等问题有疑惑，请联系组织者。<br/>

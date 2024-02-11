@@ -7,7 +7,7 @@ export default defineEventHandler((event) => {
 	const header = getHeaders(event)
 	console.log(header["user-agent"])
 	if (header["user-agent"]?.includes("Game Browser")){
-		res += '114514'
+		res += 'ENITCYsqidd'
 	}
 	// @ts-ignore
 	const resp = `

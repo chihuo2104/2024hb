@@ -15,7 +15,7 @@ func Challenge2Commit(cid string, score string) bool {
 	}
 	if utils.CheckRequirements(cid, "challenge2-in") {
 		// requires challenge0-in otherwise it is not authorized.
-		conn.Exec("INSERT INTO `clientids`  VALUES (\"" + cid + "\",\"challenge1-commit\"," + strconv.Itoa(time) + ",\"" + score + "\", NULL)")
+		conn.Exec("INSERT INTO `clientids`  VALUES (\"" + cid + "\",\"challenge2-commit\"," + strconv.Itoa(time) + ",\"" + score + "\", NULL)")
 		conn.Close()
 		return true
 	} else {

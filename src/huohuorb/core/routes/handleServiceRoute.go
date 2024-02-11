@@ -25,7 +25,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 				ctx.JSON(200, gin.H{
 					"code":   200,
 					"status": "success",
-					"data":   "[the first code]",
+					"data":   "[ENITCB19sF2]",
 				})
 			} else {
 				ctx.JSON(403, gin.H{
@@ -61,7 +61,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 			ans4, _ := ctx.GetQuery("ans4")
 			ans5, _ := ctx.GetQuery("ans5")
 			score := 0
-			if ans1 == "启航" {
+			if ans1 == "逐梦" {
 				score += 20
 			}
 			if ans2 == "java" {
@@ -84,7 +84,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 				ctx.JSON(200, gin.H{
 					"code":   200,
 					"status": "success",
-					"data":   "[Code1] [Code2]",
+					"data":   "[ENITC93dJ90] [ENITCAXXhsw]",
 					"score":  score,
 				})
 				return
@@ -94,7 +94,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 				ctx.JSON(200, gin.H{
 					"code":   200,
 					"status": "success",
-					"data":   "[Code1]",
+					"data":   "[ENITC93dJ90]",
 					"score":  score,
 				})
 				return
@@ -138,7 +138,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 					ctx.JSON(200, gin.H{
 						"code":   200,
 						"status": "success",
-						"data":   "[rn code3]",
+						"data":   "[ENITCF320Dk]",
 						"score":  num,
 					})
 				} else {
@@ -185,6 +185,35 @@ func HandleServiceRoute(ctx *gin.Context) {
 				})
 			}
 			break
+		case "challenge3-comment":
+			comment, _ := ctx.GetQuery("comment")
+			if handler.Challenge3Comment(cid, comment) {
+				ctx.JSON(200, gin.H{
+					"code":   200,
+					"status": "success",
+				})
+			} else {
+				ctx.JSON(403, gin.H{
+					"code":   403,
+					"status": "failed",
+				})
+			}
+			break
+		case "challenge3-approve":
+			if handler.Challenge3Approve(cid) {
+				ctx.JSON(200, gin.H{
+					"code":   200,
+					"status": "success",
+					"data":   "[ENITCJ2dh89]",
+				})
+			} else {
+				ctx.JSON(403, gin.H{
+					"code":   403,
+					"status": "failed",
+					"data":   "[No code]",
+				})
+			}
+			break
 		case "spendtime":
 			res := handler.CheckSpentTime(cid, "challenge0-in", "challenge0-signup")
 			if res != -1 {
@@ -218,7 +247,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 				ctx.JSON(200, gin.H{
 					"code":   200,
 					"status": "success",
-					"time":   res,
+					"note":   res,
 				})
 			} else {
 				ctx.JSON(403, gin.H{

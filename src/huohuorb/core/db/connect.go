@@ -5,6 +5,9 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+// production
+
+// dev
 func conf2url() string {
 	return "root:114514@tcp(localhost:3306)/huohuorb"
 }

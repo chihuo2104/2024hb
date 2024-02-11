@@ -29,4 +29,4 @@ def predict():
     print(output_text, score)
     return str(score)
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=8388)

@@ -13,5 +13,5 @@ func main() {
 	app.Use(gin.Logger())
 	app.GET("/", routes.HandleIndexRoute)
 	app.POST("/huohuorb", routes.HandleServiceRoute)
-	app.Run(":8080")
+	app.Run(":8288")
 }
