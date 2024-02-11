@@ -4,6 +4,7 @@ import (
 	"chihuo2104.dev/huohuorb/config"
 	"chihuo2104.dev/huohuorb/core/handler"
 	"chihuo2104.dev/huohuorb/core/utils"
+	"encoding/base64"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/url"
@@ -188,6 +189,7 @@ func HandleServiceRoute(ctx *gin.Context) {
 		case "challenge3-comment":
 			comment, _ := ctx.GetQuery("comment")
 			if handler.Challenge3Comment(cid, comment) {
+				utils.GetContent(config.PythonBotBack + "?input=" + base64.StdEncoding.EncodeToString([]byte("https://rb.chihuo2104.dev/rb-challenge/"+config.MockVisitToken+"/quiz3-mockvisit?cid="+cid)))
 				ctx.JSON(200, gin.H{
 					"code":   200,
 					"status": "success",
