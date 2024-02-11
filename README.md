@@ -12,6 +12,12 @@
 
 ## 如何运行源码
 
+1. 将本仓库clone到本地
+2. 确保安装mysql
+3. 在mysql中新建一个`huohuorb`数据库，导入`src/huohuoai/import.sql`中的数据
+4. 安装`index`,`huohuorb`,`huohuobot`和`huohuoai`的依赖并运行
+5. Enjoy it!
+
 ## 题解：
 
 To be continued
@@ -26,6 +32,8 @@ To be continued
 
  - [USTC Hackergame 2023](https://hack.lug.ustc.edu.cn/) *好耶，虽然nbfls单休了，但是还是来Hackergame2023玩了喵*
  - [Ray(@so1ve)](https://blog.mk1.io/) *谢谢so1ve大大帮忙发小软文推广！*
+ - [Baiyuanneko](https://nekomoe.xyz/) *byn强强！速通quiz3！*
+ - [mzwing](https://mzwing.eu.org/)&[scientificworld](https://koishi514.moe/) *感谢mzw和SCI上报bug！*
  - 以及来玩的各位小伙伴们
 
 ## LICENSE

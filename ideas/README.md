@@ -8,4 +8,4 @@
 
 ## LICENSE
 
-使用`CreativeCommons NC-BY-SA 4.0`协议开源和分发。
+本页的内容使用`CreativeCommons NC-BY-SA 4.0`协议开源和分发。
