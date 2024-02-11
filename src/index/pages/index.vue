@@ -84,6 +84,8 @@ const url = "/rb-challenge/" + cid + "/quiz0-signup"
 				<hr/>
 				<h2 class="font-bold text-xl p-2">小提示：</h2>
 				<div class="text-lg p-2">2.10 22:00提示：quiz1的第一题可以去微信里面找一找</div>
+				<div class="text-lg p-2">2.11 8:00提示：quiz0的红包不在点击报名后的原神启动页面里</div>
+				<div class="text-lg p-2">2.11 10:00提示：据某钞算用户反馈，原关键词无法实现quiz2满分，现将quiz2的触发关键词原chihuo2104改为chi，原nekovanilla改为neko。（zip文件未修改，请自行手动修改）</div>
 			</div>
 			<div v-else-if="activityStatus === 'Ended'" class="text-xl p-2 m-2">
 				<div class="text-xl p-2 m-2">
