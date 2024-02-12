@@ -20,7 +20,7 @@
 
 ## 题解：
 
-To be continued
+已经发布[点我阅读](./writeups/README.md)
 
 ## 玩家题解：
 
