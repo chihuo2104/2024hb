@@ -12,7 +12,7 @@
 
 然后得到了一个alert，果断打开F12看看究竟。
 
-发现检测了User-Agent，那么：curl -H "User-Agent: Game Browser" ${ysqd网址}。
+发现检测了User-Agent，那么：`curl -H "User-Agent: Game Browser" ${ysqd网址}`。
 
 get 隐藏红包 x1！
 
@@ -40,9 +40,9 @@ Q1不知道喵，之后chi在香子兰说了喵，用wechat搜索喵，好用喵
 
 ~~其实以前玩AI-Agent的时候就用过，但是没想到这么好用，之后也一直忘了还有这个搜索引擎（）~~
 
-~~不过在我这里是第三个结果才是~~
+~~不过在我这里是第三个结果才是官方题解中得到的文章~~
 
-~~顺便在chi的提示下把chi的班级盒出来了~~
+~~顺便在chi的提示下把chi的班级盒出来了~~（x
 
 ### Q2
 
@@ -90,6 +90,8 @@ mzw还是太屑力，小py要问GPT（悲
 
 最后看了Hackergame题解，得到了LLM Attack脚本。扔colab上跑了一下，56s跑出来了80分的prompt，~~居然比byn的RTX 3080 x 2还快，mzw白嫖之力发动了~~
 
+此处附上我跑出来的prompt：`Jared!!!!!!!! like Uk hysterkeysMs later readings!!!!!!!!rosse sooner airborne!!!!!!!!Heatemed Kend!!!!!!!!rose volleyball!!!!!!!!Besides Mos devotionrief`
+
 但是后面没有时间做了，chi关掉了（悲）
 
 当然也试了一下跑100分的prompt，但是20多mins了都跑不出来，loss一直在某条线上下波动，估计会失败，不跑了（）
@@ -100,7 +102,7 @@ mzw还是太屑力，小py要问GPT（悲
 
 quiz3没做真是太可惜力，xss啊（悲）
 
-怎么感觉你们stfw都那么顺利，里就我一个stfw都要费半天劲是罢（恼）
+怎么感觉你们stfw都那么顺利，就我一个stfw都要费半天劲是罢（恼）
 
 ~~是的，官方题解里头那个把TinyStories-33M当Instruct Aligned AI用的就是我~~
 
